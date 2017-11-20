@@ -29,6 +29,11 @@ public class BlockChain<Transaction> implements Iterable<Transaction> {
 		size = 0;
 	}
 	
+	/**
+	 * Adds a given <code>Transaction</code> to the <code>BlockChain</code>
+	 * 
+	 * @param transaction
+	 */
 	public void add(Transaction transaction) {
 		Block<Transaction> oldFirst = first;
 		first = new Block<>(transaction);
