@@ -12,8 +12,9 @@ public class Block<Transaction> {
 	Block<Transaction> previous;
 	Transaction transaction;
 
-	public Block(Transaction transaction) {
+	public Block(Transaction transaction, Block<Transaction> previous) {
 		this.transaction = transaction;
+		this.previous = previous;
 		this.hash = computeHash();
 	}
 	

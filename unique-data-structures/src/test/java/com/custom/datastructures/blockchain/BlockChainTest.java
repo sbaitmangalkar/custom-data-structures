@@ -26,8 +26,8 @@ public class BlockChainTest {
 	
 	@Test
 	public void test() {
-		blockChain.add("Shyam gave 10 bitcoins to Krithi");
-		blockChain.add("Krithi gave 2 bitcoins to Shyam");
+		blockChain.add("Shyam gave 100 bitcoins to his Mom");
+		blockChain.add("Ben gave 20 bitcoins to Shyam");
 		
 		for(Block<?> b : blockChain.getAllBlocks()) {
 			System.out.println(b.hash);

@@ -36,8 +36,7 @@ public class BlockChain<Transaction> implements Iterable<Transaction> {
 	 */
 	public void add(Transaction transaction) {
 		Block<Transaction> oldFirst = first;
-		first = new Block<>(transaction);
-		first.previous = oldFirst;
+		first = new Block<>(transaction, oldFirst);
 		size++;
 	}
 	
