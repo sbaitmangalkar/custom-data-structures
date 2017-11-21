@@ -42,21 +42,6 @@ public class BlockChain<Transaction> implements Iterable<Transaction> {
 	}
 	
 	/**
-	 * Deletes the first <code>Transaction</code>
-	 * 
-	 * @return
-	 */
-	public Transaction remove() {
-		if(isEmpty())
-			throw new UnsupportedOperationException("Oops!! BlockChain is Empty!!");
-		
-		Transaction transaction = first.transaction;
-		first = first.previous;
-		size--;
-		return transaction;
-	}
-	
-	/**
 	 * Returns the first <code>Transaction</code>
 	 * @return
 	 */
