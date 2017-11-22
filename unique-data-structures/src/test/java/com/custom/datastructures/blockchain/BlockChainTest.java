@@ -1,5 +1,8 @@
 package com.custom.datastructures.blockchain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,21 +20,40 @@ import com.custom.datastructures.blockchain.BlockChain;
  */
 public class BlockChainTest {
 	private BlockChain<String> blockChain;
+	private List<Miner> miners;
 	
 	@Before
 	public void init() {
 		blockChain = new BlockChain<>();
+		miners = new ArrayList<>();
 		
+		Miner satoshi = new Miner("192.168.0.1", blockChain);
+		Miner mark = new Miner("192.168.1.1", blockChain);
+		
+		miners.add(mark);
+		miners.add(satoshi);
 	}
 	
 	@Test
 	public void test() {
-		blockChain.add("Shyam gave 100 bitcoins to his Mom");
-		blockChain.add("Ben gave 20 bitcoins to Shyam");
+		Miner mark = miners.get(0);
+		Miner satoshi = miners.get(1);
+		
+		BlockChain<String> marksblockChain = (BlockChain<String>) mark.getBlockChain();
+		BlockChain<String> satoshisBlockChain = (BlockChain<String>) satoshi.getBlockChain();
+		//Mark adds a transaction
+		marksblockChain.add("Shyam gave Hisenberg 10 bit coins");
+		
+		//Satoshi adds a transaction
+		satoshisBlockChain.add("Hisenberg gave 20 bitcoins to Jessi");
+		
 		
 		for(Block<?> b : blockChain.getAllBlocks()) {
 			System.out.println(b.hash);
 		}
+		
+		System.out.println(marksblockChain);
+		System.out.println(satoshisBlockChain);
 		Assert.assertEquals(2, blockChain.size());
 	}
 	
