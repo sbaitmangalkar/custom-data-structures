@@ -20,7 +20,7 @@ import java.util.List;
  *
  * @param <Transaction>
  */
-public class BlockChain<Transaction> implements Iterable<Transaction> {
+public final class BlockChain<Transaction> implements Iterable<Transaction> {
 	private Block<Transaction> first;
 	private int size;
 	
