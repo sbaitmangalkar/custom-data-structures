@@ -45,7 +45,7 @@ public class BlockChainTest {
 		marksblockChain.add("Shyam gave Hisenberg 10 bit coins");
 		
 		//Satoshi adds a transaction
-		satoshisBlockChain.add("Hisenberg gave 20 bitcoins to Jessi");
+		satoshisBlockChain.add("Heisenberg gave 20 bitcoins to Jessi");
 		
 		
 		for(Block<?> b : blockChain.getAllBlocks()) {
