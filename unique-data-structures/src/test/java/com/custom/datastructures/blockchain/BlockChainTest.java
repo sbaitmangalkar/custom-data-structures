@@ -8,8 +8,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.custom.datastructures.blockchain.Block;
-import com.custom.datastructures.blockchain.BlockChain;
+import com.custom.datastructures.blockchain.BlockChain.Block;
+
 
 /**
  * Test class for <code>BlockChain</code>
@@ -42,14 +42,14 @@ public class BlockChainTest {
 		BlockChain<String> marksblockChain = (BlockChain<String>) mark.getBlockChain();
 		BlockChain<String> satoshisBlockChain = (BlockChain<String>) satoshi.getBlockChain();
 		//Mark adds a transaction
-		marksblockChain.add("Shyam gave Hisenberg 10 bit coins");
+		marksblockChain.add("Shyam gave 10 bitcoins to Heisenberg");
 		
 		//Satoshi adds a transaction
 		satoshisBlockChain.add("Heisenberg gave 20 bitcoins to Jessi");
 		
-		
-		for(Block<?> b : blockChain.getAllBlocks()) {
-			System.out.println(b.hash);
+		for(Block<?> block : blockChain.getAllBlocks()) {
+			System.out.println(block);
+			System.out.println(block.hash);
 		}
 		
 		System.out.println(marksblockChain);
