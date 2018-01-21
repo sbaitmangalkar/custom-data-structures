@@ -20,7 +20,7 @@
 **/target/
 
 # IDE Files #
-**/settings/
+**/.settings/
 **/.project
 **/.classpath
 
